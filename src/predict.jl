@@ -17,6 +17,11 @@ Load a checkpoint and return the model
 
 # Returns
 - `model`: the model
+
+# Examples
+```julia
+model = load_checkpoint(model, "model.jld2")
+```
 """
 function load_checkpoint(model, checkpoint_path="model.jld2")
     if (checkpoint_path == "")
@@ -29,6 +34,22 @@ function load_checkpoint(model, checkpoint_path="model.jld2")
     return model
 end
 
+
+"""
+    evaluate(model, X, output_path="output.csv")
+
+Evaluate the model and save the predictions to the output path as csv
+
+# Arguments
+- `model`: the model
+- `X`: the features
+- `output_path`: the path to save the predictions
+
+# Examples
+```julia
+evaluate(model, X)
+```
+"""
 function evaluate(model, X, output_path="output.csv")
     # Transfer to CPU for scalar indexing
     preds = round.(Int, model(X))' |> cpu

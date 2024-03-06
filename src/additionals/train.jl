@@ -19,7 +19,7 @@ Trains the model with the given data and optimizer. Note that DataLoader is crea
 
 # Examples
 ```julia
-train!(model, train_data, epochs, loss, optimizer)
+train_model(model, train_data, epochs, loss, optimizer)
 ```
 """
 function train_model(model, train_data, epochs, loss, optimizer; verbose=false, batchsize=100)

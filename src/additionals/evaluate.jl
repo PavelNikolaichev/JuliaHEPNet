@@ -8,7 +8,7 @@ Simple accuracy metric function that is used to evaluate the model
 - `model`: the model
 - `X`: the features
 - `y`: the labels
-- `round`: if true, rounds the predictions to 0 or 1. Technically use this only if your NN doesn't have rounded output.
+- `round_output`: if true, rounds the predictions to 0 or 1. Technically use this only if your NN doesn't have rounded output.
 
 # Returns
 - `accuracy`: the accuracy of the model in the range [0, 1]
